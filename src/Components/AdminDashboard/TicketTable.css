@@ -1,0 +1,162 @@
+/* General Container for the Tickets Table */
+.tickets-table-container_task {
+  padding: 20px;
+  background: #009FFF;  
+  background: -webkit-linear-gradient(to right, #f78f9e, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f88b9c, #009FFF);
+  min-height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.tickets-table-heading_task {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.tickets-table_task {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #101010;
+
+  overflow: hidden;
+}
+
+.tickets-table_task th, .tickets-table_task td {
+  border: 2px solid #131212;
+  padding: 8px;
+}
+
+.tickets-table_task th {
+  color: rgb(11, 10, 10);
+  text-align: left;
+}
+
+
+.tickets-table_task tr:hover {
+  background-color: #ddd;
+}
+
+
+.pagination_task {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  overflow-y: hidden;
+}
+
+.pagination_task button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination_task button:hover {
+  background-color: #04274c;
+}
+
+.pagination_task button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Search Bar Styles */
+.search-bar_container {
+  margin-bottom: 5px;
+  margin-left: 990px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar_input {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* User Dashboard Table Styling */
+.ticket-table {
+  overflow-x: auto;
+}
+
+.ticket-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ticket-table th, .ticket-table td {
+  border: 2px solid #0a0a0a;
+  padding: 13px;
+  text-align: center;
+}
+
+.ticket-table th {
+  background-color: hsla(0, 4%, 95%, 0);
+  font-weight: bold;
+}
+
+.ticket-table tbody tr:hover {
+  background-color: #ebf0f4;
+}
+
+.ticket-table button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 14px;
+}
+
+.ticket-table button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.ticket-table .bx {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+/* Pagination Styles for User Dashboard */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background: hsla(0, 100%, 50%, 0.847);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+  padding: 10px 15px;
+  text-align: center;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #45a049;
+}
+
+.pagination button:hover {
+  background: #45a049;
+}

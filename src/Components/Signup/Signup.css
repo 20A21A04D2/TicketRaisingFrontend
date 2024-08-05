@@ -1,0 +1,93 @@
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #009FFF;
+  background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
+  background: linear-gradient(to right, #ec2F4B, #009FFF);
+}
+
+.signup-card {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.signup-card:hover {
+  transform: scale(1.05);
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  width: 100%;
+}
+
+.form-group input,
+.form-group select {
+  width: 94%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+p {
+  margin-top: 10px;
+  color: #333;
+  text-align: center;
+}
+
+p a {
+  color: #f2f5f9;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}

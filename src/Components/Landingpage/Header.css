@@ -1,0 +1,75 @@
+
+.header_task {
+    background: #009FFF; 
+    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF); 
+    background: linear-gradient(to right, #ec2F4B, #009FFF); 
+    position: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 60px;
+    z-index: 10;
+}
+
+.logo_task{
+    display: flex;
+    align-items: center;
+}
+
+.logo_task img {
+    height: 40px;
+    transition: transform 0.3s;
+    height:40px;
+    width:40px;
+    
+    border-radius: 50px;
+}
+
+.logoText_task {
+    color: rgb(10, 10, 10);
+    font-size: 1.5em;
+    margin-left: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    transition: color 0.3s;
+}
+
+.logo_task img:hover,
+.logoText_task:hover {
+    color: white;
+    transform: scale(1.05);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.navItem {
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: color 0.3s, transform 0.3s, background-color 0.3s;
+    font-size: 1.2em;
+}
+
+.navItem svg {
+    margin-right: 5px;
+}
+
+.navItem:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+

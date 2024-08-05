@@ -1,0 +1,88 @@
+
+.admin-dashboard {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  background: #009FFF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f5556d, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fd6c82, #009FFF); 
+  height: 100vh; 
+  width: 100vw; 
+  box-sizing: border-box; 
+  overflow: auto; 
+}
+
+
+.admin-dashboard .dashboard-heading {
+  margin-top: 0px;
+  font-size: 36px; 
+  color: #333;
+  font-weight: bold;
+}
+
+
+.admin-dashboard .logout-button {
+  position: absolute;
+  top: 60px; 
+  right: 20px;
+  padding: 10px 20px;
+  height: 40px;
+  width: 120px; 
+  border: none;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.admin-dashboard .logout-button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05); 
+}
+
+
+.admin-dashboard .cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box; 
+}
+
+
+.admin-dashboard .card {
+  background: rgba(231, 227, 227, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  width: 220px; 
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.admin-dashboard .card:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background: #3f51b5; 
+  color: #fff; 
+}
+
+
+.admin-dashboard .card .card-icon {
+  font-size: 50px; 
+  color: #3f51b5;
+}
+
+
+.admin-dashboard .card .card-content h3 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.admin-dashboard .card .card-content p {
+  font-size: 28px; 
+  font-weight: bold;
+}

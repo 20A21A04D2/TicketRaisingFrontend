@@ -1,0 +1,112 @@
+.welcome-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-image-container {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.welcome-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(77, 8, 8, 0.5); 
+    z-index: 1; 
+}
+
+.welcome-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; 
+}
+
+.welcome-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2; 
+}
+
+.welcome-text {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: color 0.3s;
+    margin-left: 40px;
+}
+
+.welcome-text:hover {
+    color: rgb(240, 151, 151);
+    transform: scale(1.05);
+}
+
+.learn-more-button {
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    background: #009FFF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ec2F4B, #009FFF); 
+    border: none;
+    height: 40px;
+    width: 180px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.learn-more-button:hover {
+    background: linear-gradient(135deg, #f14c36 0%, #09f4ec 100%);
+    transform: scale(1.05);
+}
+
+.text-content--p {
+    font-size: 18px;
+    font-weight: 600;
+    color: hwb(0 96% 2%);
+    margin-top: 20px;
+}
+
+.cssanimation, .cssanimation span {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.cssanimation span {
+    display: inline-block;
+}
+
+.leFadeInTop span {
+    animation-name: leFadeInTop;
+}
+
+@keyframes leFadeInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+

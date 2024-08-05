@@ -1,0 +1,175 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: #009FFF; 
+  background: -webkit-linear-gradient(to right, #e46376, #009FFF);  
+  background: linear-gradient(to right, #e85e73, #009FFF); 
+  border-radius: 15px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+  font-size: 34px;
+  color: #333;
+  margin: 0;
+  text-align: center;
+  font-family: 'Arial', sans-serif; 
+  font-weight: 700; 
+  transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.dashboard-header h1:hover {
+  color: #4CAF50; 
+  transform: scale(1.05); 
+}
+
+.header-actions {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-container input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 300px;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4CAF50;
+  color: rgb(252, 251, 251);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 14px;
+}
+.search-container button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.action-buttons button {
+  background-color: #4CAF50;
+  height: 38px;
+  color: white;
+  text-align: center;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width:100px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:3px;
+
+}
+
+.action-buttons button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.ticket-table {
+  overflow-x: auto;
+
+}
+
+.ticket-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ticket-table th, .ticket-table td {
+  border: 2px solid #0a0a0a;
+  padding: 13px;
+  text-align: center;
+}
+
+.ticket-table th {
+  background-color: hsla(0, 4%, 95%, 0);
+  font-weight: bold;
+}
+
+.ticket-table tbody tr:hover {
+  background-color: #ebf0f4;
+}
+
+
+
+.ticket-table button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 14px;
+
+}
+
+.ticket-table button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.ticket-table .bx {
+  font-size: 16px;
+  margin-right: 5px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background: hsla(0, 100%, 50%, 0.847);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 30px;
+  width:30px;
+  padding: 10px 15px;
+  text-align: center;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+ 
+    background-color: #45a049;
+}
+.pagination button:hover {
+  background:#45a049;
+}

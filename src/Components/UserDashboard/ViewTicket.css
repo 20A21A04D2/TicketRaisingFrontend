@@ -1,0 +1,61 @@
+.view-ticket-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #009FFF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ec2F4B, #009FFF); 
+    position: relative; 
+  }
+  
+  .view-ticket-details {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    max-width: 400px; 
+    width: 100%;
+    text-align: center;
+    position: relative; 
+  }
+  
+  .view-ticket-details h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 26px; 
+  }
+  
+  .view-ticket-details .ticket-details {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .view-ticket-details .ticket-details p {
+    margin-bottom: 10px;
+    font-size: 19px; 
+    color: #333;
+  }
+  
+  .view-ticket-details .back-button {
+    position: absolute; 
+    top: 20px;
+    left: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    font-size: 16px; 
+  }
+  
+  .view-ticket-details .back-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  

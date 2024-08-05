@@ -1,0 +1,100 @@
+
+.signin-parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #ec2F4B, #009FFF);  
+}
+
+
+.signin-child-card {
+  width: 400px; 
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px; 
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); 
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.signin-child-card:hover {
+  transform: scale(1.05);
+}
+
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signin-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px; 
+  font-weight: bold; 
+}
+
+
+.signin-form-group {
+  margin-bottom: 20px; 
+  width: 100%;
+}
+
+
+.signin-form-group label {
+  margin-bottom: 5px;
+  color: #333; 
+  font-weight: bold; 
+}
+
+
+.signin-form-group input {
+  width: 94%;
+  padding: 10px; 
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.8);
+  transition: border 0.3s ease;
+}
+
+.signin-form-group input:focus {
+  border: 1px solid #4CAF50; 
+  outline: none;
+}
+
+button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%; 
+  text-align: center; 
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+
+p {
+  margin-top: 10px;
+  color: #333;
+  text-align: center;
+}
+
+p a {
+  color: #f2f8f3; 
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
