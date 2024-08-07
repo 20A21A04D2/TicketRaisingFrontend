@@ -18,6 +18,7 @@ import CompleteTickets from './Components/AdminDashboard/Completedtickets'
 import InCompletedTickets from'./Components/AdminDashboard/IncompletedTickets'
 import AssignedTickets from './Components//AdminDashboard/AssignedTickets'
 import Chart from './Components/AdminDashboard/Chart';
+import Complete from './Components/UserDashboard/Complete'
 function App() {
   return (
     <Router>
@@ -40,6 +41,7 @@ function App() {
           <Route path="/incticket" element={<InCompletedTickets />} />
           <Route path="/assticket" element={<AssignedTickets />} />
           <Route path='/view'element={<Chart />}/>
+          <Route path="/ccticket" element={<Complete />} />
           <Route path='//'element={<Land />}/>
         </Routes>
       </div>

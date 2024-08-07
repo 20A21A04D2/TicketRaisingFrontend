@@ -4,7 +4,7 @@ import axios from 'axios';
 import './UserDashboard.css';
 import 'boxicons/css/boxicons.min.css';
 
-const ITEMS_PER_PAGE = 6; 
+const ITEMS_PER_PAGE = 6;
 
 function UserDashboard() {
   const [tickets, setTickets] = useState([]);
@@ -13,7 +13,6 @@ function UserDashboard() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const navigate = useNavigate();
- 
 
   useEffect(() => {
     const userEmail = localStorage.getItem('userEmail');
@@ -42,12 +41,16 @@ function UserDashboard() {
       );
       setFilteredTickets(results);
     }
-    setCurrentPage(1); 
+    setCurrentPage(1);
     setTotalPages(Math.ceil(filteredTickets.length / ITEMS_PER_PAGE));
   };
 
   const handleRaiseTicket = () => {
     navigate('/raise-ticket');
+  };
+
+  const handleCompletedTickets = () => {
+    navigate('/cticket');
   };
 
   const handleLogout = () => {
@@ -94,15 +97,18 @@ function UserDashboard() {
             onChange={handleSearchChange}
             placeholder="Search by Ticket Name"
           />
-          <button style={{height:"40px",width:"140px"}}onClick={handleSearchClick}>
+          <button style={{ height: "40px", width: "140px" }} onClick={handleSearchClick}>
             <i className="bx bx-search"></i> Search
           </button>
         </div>
         <div className="action-buttons">
+          <button className="completed-tickets-button" onClick={handleCompletedTickets}>
+            <i className="bx bx-check-circle"></i> Completed Tickets
+          </button>
           <button className="raise-ticket-button" onClick={handleRaiseTicket}>
             <i className="bx bx-plus"></i> Raise Ticket
           </button>
-          <button className="logout-button" onClick={handleLogout}style={{background:"red"}}>
+          <button className="logout-button" onClick={handleLogout} style={{ background: "red" }}>
             <i className="bx bx-log-out"></i> Logout
           </button>
         </div>
