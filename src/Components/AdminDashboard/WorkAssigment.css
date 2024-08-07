@@ -1,14 +1,13 @@
 /* Wrapper for the entire application */
 .app-wrapper {
     min-height: 100vh;
-    background: #009FFF;  
-    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ec2F4B, #009FFF); 
+    background: #f8f9fa; 
+    background: -webkit-linear-gradient(to right, #f6f5f5, #848586); 
+    background: linear-gradient(to right, #f9f6f6, #ccccd1); 
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 
 .work-assignment-form {
     background: rgba(255, 255, 255, 0.2);
@@ -23,14 +22,12 @@
     position: relative; 
 }
 
-
 .work-assignment-form__heading {
     margin-bottom: 20px;
     color: #333;
     font-size: 24px;
     font-weight: bold;
 }
-
 
 .work-assignment-form__group {
     margin-bottom: 20px;
@@ -45,7 +42,8 @@
     color: #333;
 }
 
-.work-assignment-form__select {
+.work-assignment-form__select,
+.work-assignment-form__input {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -55,6 +53,8 @@
     font-size: 14px;
     color: #333;
 }
+
+
 
 .work-assignment-form__button {
     background-color: #4CAF50;

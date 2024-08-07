@@ -3,9 +3,9 @@
   flex-direction: column;
   height: 100vh;
   border: 2px solid rgba(255, 255, 255, 0.3);
-  background: #009FFF; 
-  background: -webkit-linear-gradient(to right, #e46376, #009FFF);  
-  background: linear-gradient(to right, #e85e73, #009FFF); 
+  background: #f8f9fa; 
+  background: -webkit-linear-gradient(to right, #f6f5f5, #848586); 
+  background: linear-gradient(to right, #f9f6f6, #ccccd1); 
   border-radius: 15px;
   padding: 20px;
   box-sizing: border-box;

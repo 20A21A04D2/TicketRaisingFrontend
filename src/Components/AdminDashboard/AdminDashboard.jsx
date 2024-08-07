@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaTicketAlt, FaUsers, FaExclamationTriangle, FaCheckCircle, FaUserTie, FaTasks, FaPlus, FaUser, FaFileAlt, FaShieldAlt } from 'react-icons/fa'; // Updated icons
+import { FaTicketAlt, FaUsers, FaExclamationTriangle, FaCheckCircle, FaUserTie, FaTasks, FaPlus, FaUser, FaChartBar, FaChartPie } from 'react-icons/fa'; // Updated icons
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
@@ -12,17 +12,15 @@ const AdminDashboard = () => {
   const [workAssignmentCount, setWorkAssignmentCount] = useState(0);
   const [AssignmentCount, setAssignmentCount] = useState(0);
   const navigate = useNavigate();
- 
-  const handleLogout = () => {
-    localStorage.removeItem('userEmail');
-    navigate('/signin');
-  };
-
-  const navigateTo = (path) => {
-    navigate(path);
-  };
 
   useEffect(() => {
+    const userEmail = localStorage.getItem('userEmail');
+
+    if (!userEmail) {
+      navigate('/signin');
+      return;
+    }
+
     const fetchData = async () => {
       try {
         const userCountResponse = await fetch('https://ticketraisingbackend.onrender.com/api/user-count');
@@ -59,66 +57,75 @@ const AdminDashboard = () => {
     };
 
     fetchData();
-  }, []);
+  }, [navigate]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('userEmail');
+    navigate('/signin');
+  };
+
+  const navigateTo = (path) => {
+    navigate(path);
+  };
 
   return (
     <div className="admin-dashboard">
       <div><button className="logout-button" onClick={handleLogout}>  <i className="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Logout</button></div> 
       <h2 className="dashboard-heading">Welcome to Admin Dashboard</h2>
       <div className="cards-container">
-        <div className="card"onClick={() => navigateTo('/tickettable')}>
+        <div className="card" onClick={() => navigateTo('/tickettable')}>
           <FaTicketAlt className="card-icon" />
           <div className="card-content">
             <h3>Number of Tickets</h3>
             <p>{ticketCount}</p>
           </div>
         </div>
-        <div className="card"onClick={() => navigateTo('/usertable')}>
+        <div className="card" onClick={() => navigateTo('/usertable')}>
           <FaUsers className="card-icon" />
           <div className="card-content">
             <h3>Number of Users</h3>
             <p>{userCount}</p>
           </div>
         </div>
-        <div className="card">
+        <div className="card" onClick={() => navigateTo('/pendingtickets')}>
           <FaExclamationTriangle className="card-icon" />
           <div className="card-content">
             <h3>Number of Pending Tickets</h3>
             <p>{pendingTicketCount}</p>
           </div>
         </div>
-        <div className="card">
+        <div className="card" onClick={() => navigateTo('/cticket')}>
           <FaCheckCircle className="card-icon" />
           <div className="card-content">
             <h3>Number of Completed Tickets</h3>
             <p>{completedTicketCount}</p>
           </div>
         </div>
-        <div className="card">
+        <div className="card" onClick={() => navigateTo('/devtable')}>
           <FaUserTie className="card-icon" />
           <div className="card-content">
             <h3>Number of Developers</h3>
             <p>{developerCount}</p>
           </div>
         </div>
-        <div className="card">
+        <div className="card" onClick={() => navigateTo('/incticket')}>
           <FaPlus className="card-icon" />
           <div className="card-content">
             <h3>Number of Incompleted Tickets</h3>
             <p>{AssignmentCount}</p>
           </div>
         </div>
-        <div className="card"onClick={() => navigateTo('/w-assign')}>
+        <div className="card" onClick={() => navigateTo('/w-assign')}>
           <FaTasks className="card-icon" />
           <div className="card-content">
             <h3>Work Assignments</h3>
-            <p>{workAssignmentCount}</p>
           </div>
         </div>
-        <div className="card" onClick={() => navigateTo('/raise-ticket')}>
-          <FaFileAlt className="card-icon" />
+        <div className="card" onClick={() => navigateTo('/assticket')}>
+          <FaChartBar className="card-icon" />
           <div className="card-content">
-            <h3>Add Ticket</h3>
+            <h3>No of Assigned Tickets</h3>
+            <p>{workAssignmentCount}</p>
           </div>
         </div>
         <div className="card" onClick={() => navigateTo('/signup')}>
@@ -127,10 +134,10 @@ const AdminDashboard = () => {
             <h3>Add Developer</h3>
           </div>
         </div>
-        <div className="card" onClick={() => navigateTo('/signup')}>
-          <FaShieldAlt className="card-icon" />
+        <div className="card" onClick={() => navigateTo('/view')}>
+          <FaChartPie className="card-icon" />
           <div className="card-content">
-            <h3>Add User</h3>
+            <h3>Visualization</h3>
           </div>
         </div>
       </div>

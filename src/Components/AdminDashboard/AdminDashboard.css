@@ -3,9 +3,9 @@
   text-align: center;
   padding: 20px;
   position: relative;
-  background: #009FFF;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #f5556d, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fd6c82, #009FFF); 
+  background: #f8f9fa; 
+  background: -webkit-linear-gradient(to right, #f6f5f5, #848586); 
+  background: linear-gradient(to right, #f9f6f6, #ccccd1); 
   height: 100vh; 
   width: 100vw; 
   box-sizing: border-box; 
@@ -54,7 +54,7 @@
 
 
 .admin-dashboard .card {
-  background: rgba(231, 227, 227, 0.8);
+  background: rgba(254, 254, 254, 0.8);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);

@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 const WorkAssignmentForm = () => {
   const [tickets, setTickets] = useState([]);
   const [developers, setDevelopers] = useState([]);
+  const [projectName, setProjectName] = useState('');
   const [selectedTicket, setSelectedTicket] = useState('');
   const [selectedDeveloper, setSelectedDeveloper] = useState('');
   const navigate = useNavigate();
@@ -26,6 +27,18 @@ const WorkAssignmentForm = () => {
 
     fetchTicketsAndDevelopers();
   }, []);
+
+  const handleTicketChange = (e) => {
+    const selectedTicketId = e.target.value;
+    setSelectedTicket(selectedTicketId);
+
+    const selectedTicket = tickets.find(ticket => ticket._id === selectedTicketId);
+    if (selectedTicket) {
+      setProjectName(selectedTicket.projectName);
+    } else {
+      setProjectName('');
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -57,17 +70,27 @@ const WorkAssignmentForm = () => {
         <h2 className="work-assignment-form__heading">Work Assignment</h2>
         <form onSubmit={handleSubmit}>
           <div className="work-assignment-form__group">
+            <label className="work-assignment-form__label">Project:</label>
+            <input
+              type="text"
+              style={{width:"380px"}}
+              className="work-assignment-form__input"
+              value={projectName}
+              readOnly
+            />
+          </div>
+          <div className="work-assignment-form__group">
             <label className="work-assignment-form__label">Ticket:</label>
             <select
               className="work-assignment-form__select"
               value={selectedTicket}
-              onChange={(e) => setSelectedTicket(e.target.value)}
+              onChange={handleTicketChange}
               required
             >
               <option value="" disabled>Select a ticket</option>
               {tickets.map(ticket => (
                 <option key={ticket._id} value={ticket._id}>
-                  {ticket.ticketName}
+                  {ticket.ticketName} - {ticket.ticketDescription}
                 </option>
               ))}
             </select>

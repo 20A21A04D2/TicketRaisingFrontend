@@ -1,19 +1,19 @@
-/* Admin Dashboard container styling */
+/* Updated Developer Dashboard container styling */
 .developer-dashboard {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   font-family: Arial, sans-serif;
-  background: #009FFF;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #e15368, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ed667b, #009FFF); 
-  height: 100vh; 
+  background: #f8f9fa;
+  background: -webkit-linear-gradient(to right, #f6f5f5, #848586);
+  background: linear-gradient(to right, #f9f6f6, #ccccd1);
+  height: 100vh;
   width: 100vw;
   box-sizing: border-box;
-  overflow: auto; 
+  overflow: auto;
+  position: relative; 
 }
-
 
 .developer-dashboard .header {
   display: flex;
@@ -23,7 +23,6 @@
   box-sizing: border-box;
 }
 
-
 .developer-dashboard .header .welcome-message {
   text-align: center;
   font-size: 34px;
@@ -32,12 +31,10 @@
   margin-top: 0px;
 }
 
-
 .developer-dashboard .header .button-group {
   display: flex;
-  justify-content: flex-end; 
+  justify-content: flex-end;
 }
-
 
 .developer-dashboard .header .search-bar {
   padding: 10px;
@@ -46,7 +43,6 @@
   border-radius: 5px;
   width: 250px;
 }
-
 
 .developer-dashboard .header .developer-logout-button {
   background-color: #f44336;
@@ -63,13 +59,11 @@
   background-color: #d32f2f;
 }
 
-
 .developer-dashboard .tickets-table {
-  margin-top: 20px;
+  margin-top: 110px;
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
-  
 }
 
 .developer-dashboard .tickets-table table {
@@ -88,17 +82,15 @@
   background-color: hsla(0, 4%, 95%, 0);
 }
 
-
-
 .developer-dashboard .tickets-table tr:hover {
   background-color: #ffffffe8;
 }
 
 .developer-dashboard .tickets-table .complete-task-button {
-  background-color: #0d19c2; 
+  background-color: #0d19c2;
   color: white;
   border: none;
-  width:160px;
+  width: 160px;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
@@ -108,19 +100,17 @@
 }
 
 .developer-dashboard .tickets-table .complete-task-button.completed {
-  background-color: #067e4c; 
+  background-color: #067e4c;
   text-align: center;
 }
 
 .developer-dashboard .tickets-table .complete-task-button:hover {
-  background-color: #1badfc; 
+  background-color: #1badfc;
 }
 
 .developer-dashboard .tickets-table .complete-task-button i {
   margin-right: 5px;
 }
-
-
 
 .developer-dashboard .pagination {
   display: flex;
@@ -146,4 +136,35 @@
 
 .developer-dashboard .pagination .pagination-button:hover {
   background-color: #ddd;
+}
+
+/* Ticket summary boxes styling */
+.ticket-summary {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.summary-box {
+  background-color: #ece8e8;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  width: 180px;
+  height: 100px;
+  text-align: center;
+}
+.summary-box:hover{
+  background-color: rgb(25, 160, 244);
+}
+.summary-box h3 {
+  font-size: 18px;
+}
+
+.summary-box p {
+  font-size: 24px;
+  font-weight: bold;
 }

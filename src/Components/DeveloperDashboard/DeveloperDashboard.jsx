@@ -10,15 +10,25 @@ const DeveloperDashboard = () => {
   const [filteredTickets, setFilteredTickets] = useState([]);
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const ticketsPerPage = 7;
+  const [completedCount, setCompletedCount] = useState(0);
+  const [incompletedCount, setIncompletedCount] = useState(0);
+  const ticketsPerPage = 5;
 
   useEffect(() => {
     const fetchTickets = async () => {
       const userEmail = localStorage.getItem('userEmail');
+      if (!userEmail) {
+        navigate('/signin');
+        return;
+      }
       try {
-        const response = await axios.get('https://ticketraisingbackend.onrender.com/api/getticket', { params: { email:userEmail } });
+        const response = await axios.get('https://ticketraisingbackend.onrender.com/api/getticket', { params: { email: userEmail } });
         setTickets(response.data);
         setFilteredTickets(response.data);
+        const completed = response.data.filter(ticket => ticket.status === 'Completed').length;
+        const incompleted = response.data.filter(ticket => ticket.status == 'Incompleted').length;
+        setCompletedCount(completed);
+        setIncompletedCount(incompleted);
       } catch (error) {
         console.error('Error fetching tickets:', error);
       }
@@ -36,7 +46,7 @@ const DeveloperDashboard = () => {
   }, [search, tickets]);
 
   const handleLogout = () => {
-    localStorage.removeItem('UserEmail');
+    localStorage.removeItem('userEmail');
     navigate('/signin');
   };
 
@@ -76,10 +86,21 @@ const DeveloperDashboard = () => {
           </button>
         </div>
       </div>
+      <div className="ticket-summary">
+        <div className="summary-box">
+          <h3>Completed Tickets</h3>
+          <p>{completedCount}</p>
+        </div>
+        <div className="summary-box">
+          <h3>Incomplete Tickets</h3>
+          <p>{incompletedCount}</p>
+        </div>
+      </div>
       <div className="tickets-table">
         <table>
           <thead>
             <tr>
+              <th>Project Name</th>
               <th>Ticket Name</th>
               <th>Ticket Description</th>
               <th>Ticket Type</th>
@@ -91,6 +112,7 @@ const DeveloperDashboard = () => {
           <tbody>
             {currentTickets.map((ticket) => (
               <tr key={ticket._id}>
+                <td>{ticket.projectName}</td>
                 <td>{ticket.ticketName}</td>
                 <td>{ticket.ticketDescription}</td>
                 <td>{ticket.ticketType}</td>

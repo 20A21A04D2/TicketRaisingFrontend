@@ -21,6 +21,7 @@ const ViewTicket = () => {
         <Link to="/user-dashboard" className="back-button">Back</Link>
         <h3>View Ticket</h3>
         <div className="ticket-details">
+          <p><strong>ProjectName:</strong> {ticket.projectName}</p>
           <p><strong>Ticket Name:</strong> {ticket.ticketName}</p>
           <p><strong>Description:</strong> {ticket.ticketDescription}</p>
           <p><strong>Type:</strong> {ticket.ticketType}</p>

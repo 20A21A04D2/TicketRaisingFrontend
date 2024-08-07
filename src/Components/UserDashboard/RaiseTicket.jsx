@@ -8,33 +8,38 @@ import './RaiseTicket.css';
 function RaiseTicket() {
   const [ticketName, setTicketName] = useState('');
   const [ticketDescription, setTicketDescription] = useState('');
-  const [ticketType, setTicketType] = useState('Medium');
+  const [ticketType, setTicketType] = useState('Low');
+  const [projectName, setProjectName] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const email = localStorage.getItem('userEmail');
-    console.log(email)
-    console.log(  ticketName,
-        ticketDescription,
-        ticketType,
-         email)
+    console.log(ticketName,ticketDescription,ticketType,projectName,email)
     
     try {
       const response = await axios.post('https://ticketraisingbackend.onrender.com/api/addticket', {
         ticketName,
         ticketDescription,
         ticketType,
-        email: email,
+        projectName,
+        email,
         status: 'pending'
       });
-      console.log('Response:', response);
-      toast.success('Ticket raised successfully!');
-      setTimeout(() => navigate('/user-dashboard'), 2000); 
+
+      if (response.status === 201) {
+        toast.success('Ticket raised successfully!');
+        setTimeout(() => navigate('/user-dashboard'), 2000); 
+      }
     } catch (error) {
-      console.error('Error:', error);
-      toast.error('Failed to raise ticket');
+      if (error.response && error.response.status === 400 && error.response.data.error === 'Email is required') {
+        toast.error('Email is required.');
+        setTimeout(() => navigate('/signin'), 2000); 
+      } else {
+        console.error('Error:', error);
+        toast.error('Failed to raise ticket');
+      }
     }
   };
 
@@ -42,6 +47,15 @@ function RaiseTicket() {
     <div className="raise-ticket-container">
       <form onSubmit={handleSubmit} className="raise-ticket-form">
         <h2>Raise a Ticket</h2>
+        <div className="form-group">
+          <label>Project Name:</label>
+          <input
+            type="text"
+            value={projectName}
+            onChange={(e) => setProjectName(e.target.value)}
+            required
+          />
+        </div>
         <div className="form-group">
           <label>Ticket Name:</label>
           <input
@@ -63,7 +77,7 @@ function RaiseTicket() {
           <label>Type:</label>
           <select
             value={ticketType}
-            style={{width:"400px"}}
+            style={{width:"495px"}}
             onChange={(e) => setTicketType(e.target.value)}
             required
           >

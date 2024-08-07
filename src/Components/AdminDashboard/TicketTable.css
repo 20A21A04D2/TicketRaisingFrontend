@@ -1,9 +1,9 @@
 /* General Container for the Tickets Table */
 .tickets-table-container_task {
   padding: 20px;
-  background: #009FFF;  
-  background: -webkit-linear-gradient(to right, #f78f9e, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #f88b9c, #009FFF);
+  background: #f8f9fa; 
+  background: -webkit-linear-gradient(to right, #f6f5f5, #848586); 
+  background: linear-gradient(to right, #f9f6f6, #ccccd1); 
   min-height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
@@ -24,13 +24,12 @@
   border-collapse: collapse;
   margin: 20px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 2px solid #101010;
-
+  border: 1px solid #101010;
   overflow: hidden;
 }
 
 .tickets-table_task th, .tickets-table_task td {
-  border: 2px solid #131212;
+  border: 1px solid #131212;
   padding: 8px;
 }
 
@@ -39,11 +38,9 @@
   text-align: left;
 }
 
-
 .tickets-table_task tr:hover {
-  background-color: #ddd;
+  background-color: #fdfafa;
 }
-
 
 .pagination_task {
   display: flex;
@@ -74,18 +71,42 @@
 /* Search Bar Styles */
 .search-bar_container {
   margin-bottom: 5px;
-  margin-left: 990px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; /* Align items to the right */
+  gap: 10px; /* Add gap between search input and add button */
+  width: 100%;
 }
 
 .search-bar_input {
   padding: 10px;
-  width: 80%;
-  max-width: 400px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
+}
+
+/* Add Button Styles */
+.add-button {
+  padding: 10px;
+  width:180px;
+  height:40px;
+  border: none;
+  border-radius: 4px;
+  background-color: #028146;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-button i {
+  margin-right: 5px;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
 }
 
 /* User Dashboard Table Styling */
@@ -99,7 +120,7 @@
 }
 
 .ticket-table th, .ticket-table td {
-  border: 2px solid #0a0a0a;
+  border: 1px solid #0a0a0a;
   padding: 13px;
   text-align: center;
 }
@@ -113,6 +134,11 @@
   background-color: #ebf0f4;
 }
 
+.ticket-table .action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
 .ticket-table button {
   background-color: #4CAF50;
   color: white;
@@ -124,9 +150,17 @@
   font-size: 14px;
 }
 
+.ticket-table button.delete-button {
+  background-color: #f44336;
+}
+
 .ticket-table button:hover {
   background-color: #45a049;
   transform: scale(1.05);
+}
+
+.ticket-table button.delete-button:hover {
+  background-color: #e53935;
 }
 
 .ticket-table .bx {
@@ -154,9 +188,10 @@
 }
 
 .pagination button.active {
-  background-color: #45a049;
+  background-color: #00ff91;
+  color: white;
 }
 
-.pagination button:hover {
-  background: #45a049;
+.pagination button:hover:not(.active) {
+  background-color: #ddd;
 }

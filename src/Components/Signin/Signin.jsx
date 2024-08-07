@@ -34,12 +34,8 @@ const SignIn = () => {
       }
     } catch (error) {
       console.error(error);
-
-      if (error.response && error.response.data && error.response.data.message) {
-        toast.error(error.response.data.message);
-      } else {
-        toast.error('Invalid credentials');
-      }
+     toast.error('Invalid credentials');
+      
     }
   };
 

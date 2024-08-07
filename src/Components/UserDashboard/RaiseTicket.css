@@ -3,9 +3,9 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #009FFF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ec2F4B, #009FFF); 
+    background: #f8f9fa; 
+  background: -webkit-linear-gradient(to right, #f6f5f5, #848586); 
+  background: linear-gradient(to right, #f9f6f6, #ccccd1); 
   }
   
   .raise-ticket-form {
@@ -15,7 +15,7 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     padding: 30px;
-    max-width: 400px;
+    max-width: 500px;
     width: 100%;
     text-align: center;
   }

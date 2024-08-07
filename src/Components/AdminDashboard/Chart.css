@@ -1,0 +1,37 @@
+
+
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; 
+    justify-content: space-between; 
+    padding: 1rem;
+  }
+  
+  .chart-container > div {
+    flex: 1 1 calc(50% - 1rem); 
+    max-width: calc(50% - 1rem); 
+    box-sizing: border-box;
+  }
+  
+  .chart-container h3 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .chart-container .pie-chart-container {
+    margin-right: 200px;
+    max-width: calc(25% - 1rem); 
+  }
+  
+ 
+  .chart-container canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+ 
+  .chart-container .pie-chart-container canvas {
+    max-height: 800px; 
+  }
+  

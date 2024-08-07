@@ -13,6 +13,11 @@ import WorkAssignment from './Components/AdminDashboard/WorkAssigment';
 import CompleteTicket from './Components/DeveloperDashboard/CompleteTicket'
 import DeveloperDashboard from './Components/DeveloperDashboard/DeveloperDashboard';
 import Land from './Components/Landingpage/Land';
+import PendingTickets from './Components/AdminDashboard/pendingtickets';
+import CompleteTickets from './Components/AdminDashboard/Completedtickets'
+import InCompletedTickets from'./Components/AdminDashboard/IncompletedTickets'
+import AssignedTickets from './Components//AdminDashboard/AssignedTickets'
+import Chart from './Components/AdminDashboard/Chart';
 function App() {
   return (
     <Router>
@@ -30,6 +35,11 @@ function App() {
           <Route path="/w-assign"element={<WorkAssignment />}/>
           <Route path="/dd-dashboard"element={<DeveloperDashboard/>}/>
           <Route path="/c-task/:ticketId"element={<CompleteTicket />}/>
+          <Route path="/pendingtickets" element={<PendingTickets />} />
+          <Route path="/cticket" element={<CompleteTickets />} />
+          <Route path="/incticket" element={<InCompletedTickets />} />
+          <Route path="/assticket" element={<AssignedTickets />} />
+          <Route path='/view'element={<Chart />}/>
           <Route path='//'element={<Land />}/>
         </Routes>
       </div>

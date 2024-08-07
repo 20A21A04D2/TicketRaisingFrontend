@@ -7,6 +7,7 @@ import './RaiseTicket.css';
 
 const EditTicket = () => {
   const initialTicket = {
+    projectName: "", 
     ticketName: "",
     ticketDescription: "",
     ticketType: ""
@@ -47,6 +48,15 @@ const EditTicket = () => {
       <form onSubmit={submitForm} className="raise-ticket-form">
         <h2>Update Ticket</h2>
         <div className="form-group">
+          <label>Project Name:</label>
+          <input
+            type="text"
+            id="projectName"
+            name="projectName"
+            value={ticket.projectName} 
+            onChange={inputChangeHandler}
+            required
+          />
           <label htmlFor="ticketName">Ticket Name:</label>
           <input
             type="text"
@@ -60,8 +70,9 @@ const EditTicket = () => {
         <div className="form-group">
           <label htmlFor="description">Description:</label>
           <input
+            type="text"
             id="description"
-            name="description"
+            name="ticketDescription" 
             value={ticket.ticketDescription}
             onChange={inputChangeHandler}
             required
@@ -71,9 +82,10 @@ const EditTicket = () => {
           <label htmlFor="type">Type:</label>
           <select
             id="type"
-            name="type"
+            name="ticketType" 
             value={ticket.ticketType}
             onChange={inputChangeHandler}
+            style={{width:"495px"}}
             required
           >
             <option value="Low">Low</option>

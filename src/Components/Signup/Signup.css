@@ -3,11 +3,10 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #009FFF;
-  background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
-  background: linear-gradient(to right, #ec2F4B, #009FFF);
+  background: #f8f9fa; 
+  background: -webkit-linear-gradient(to right, #f6f5f5, #848586); 
+  background: linear-gradient(to right, #f9f6f6, #ccccd1); 
 }
-
 .signup-card {
   background: rgba(255, 255, 255, 0.2);
   border: 2px solid rgba(255, 255, 255, 0.3);
@@ -84,7 +83,7 @@ p {
 }
 
 p a {
-  color: #f2f5f9;
+  color: #62c715;
   text-decoration: none;
 }
 

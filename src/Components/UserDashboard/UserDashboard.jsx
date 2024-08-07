@@ -111,6 +111,7 @@ function UserDashboard() {
         <table>
           <thead>
             <tr>
+              <th>ProjectName</th>
               <th>Ticket Name</th>
               <th>Description</th>
               <th>Type</th>
@@ -121,6 +122,7 @@ function UserDashboard() {
           <tbody>
             {currentTickets.map(ticket => (
               <tr key={ticket._id}>
+                <td>{ticket.projectName}</td>
                 <td>{ticket.ticketName}</td>
                 <td>{ticket.ticketDescription}</td>
                 <td>{ticket.ticketType}</td>

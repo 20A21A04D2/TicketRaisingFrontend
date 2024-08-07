@@ -1,8 +1,8 @@
 
 .header_task {
-    background: #009FFF; 
-    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF); 
-    background: linear-gradient(to right, #ec2F4B, #009FFF); 
+    background: #f8f9fa; 
+    background: -webkit-linear-gradient(to right, #f6f5f5, #fbfeff); 
+    background: linear-gradient(to right, #d9d7d7, #dadade); 
     position: fixed;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     top: 0;
@@ -40,7 +40,7 @@
 
 .logo_task img:hover,
 .logoText_task:hover {
-    color: white;
+    color: rgb(250, 243, 243);
     transform: scale(1.05);
 }
 

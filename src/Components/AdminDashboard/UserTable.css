@@ -6,9 +6,9 @@
     align-items: center;
     justify-content: flex-start;
     min-height: calc(100vh - 50px);
-    background: #009FFF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f5556d, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #fd6c82, #009FFF); 
+    background: #f8f9fa; 
+  background: -webkit-linear-gradient(to right, #f6f5f5, #848586); 
+  background: linear-gradient(to right, #f9f6f6, #ccccd1); 
     margin: 0;
     top:0;
     padding: 20px;
@@ -27,7 +27,7 @@
     border-collapse: collapse;
     border-radius: 8px;
     overflow: hidden;
-    margin-top: 0; 
+    margin-top: 10px; 
   }
   
   .user-table th, .user-table td {
@@ -44,10 +44,13 @@
   .user-table th {
     font-weight: bold;
   }
-  
-
-  
+  .add-user-button{
+    margin-left: 1010px;
+   width:180px;
+  }
   .user-table tbody tr:hover {
     background-color: #e9ecef;
   }
-  
+  .delete-user-button{
+    background-color: red;
+  }
