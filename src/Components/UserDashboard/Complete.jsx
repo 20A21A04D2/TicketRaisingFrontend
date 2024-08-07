@@ -12,7 +12,7 @@ const PendingTickets = () => {
 
     axios.get('https://ticketraisingbackend.onrender.com/api/completedtickets')
       .then(response => {
-        const userPendingTickets = response.data.filter(user => user.email === userEmail);
+        const userPendingTickets = response.data.filter(ticket => ticket.email === userEmail);
         setPendingTickets(userPendingTickets);
       })
       .catch(error => console.error('Error fetching completed tickets:', error));
